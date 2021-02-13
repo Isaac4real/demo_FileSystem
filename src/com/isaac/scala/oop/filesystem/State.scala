@@ -2,6 +2,7 @@ package com.isaac.scala.oop.filesystem
 
 import com.isaac.scala.oop.files.Directory
 
+//why not case class
 class State(val root: Directory, val wd: Directory, val output: String){
 
   def show: Unit =

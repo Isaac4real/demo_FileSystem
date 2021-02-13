@@ -1,5 +1,16 @@
 package com.isaac.scala.oop.files
 
-abstract class DirEntry(parentPath: String, name: String) {
+// why not abstract case class
+abstract class DirEntry(val parentPath: String, val name: String) {
+
+  def path: String = {
+    val separatorIfNecessary =
+      if (parentPath.equals(Directory.ROOT_PATH)) ""
+      else Directory.SEPARATOR
+
+    parentPath + separatorIfNecessary + name
+  }
+
+  def asDirectory: Directory
 
 }
